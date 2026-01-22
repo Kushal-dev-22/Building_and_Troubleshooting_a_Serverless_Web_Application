@@ -34,6 +34,8 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 2.  Navigate to the AWS Management Console login page.
     
 3.  Log in using your AWS credentials.
+
+(images/1.png)
     
 
 ## Step 2: Initialize Database via CloudShell
