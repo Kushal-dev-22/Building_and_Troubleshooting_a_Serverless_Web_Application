@@ -56,11 +56,22 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     cd hands-on-aws-troubleshooting/Building_and_Troubleshooting_a_Serverless_Web_Application
     
     ```
+<br>
+<p align="center">
+    <img src='./Images/2.png' width='500'/>
+</p>
+<br> 
     
 4.  Open the `dynamodb_commands.txt` file to view the table creation syntax.
     
-5.  Execute the command from the text file to create the DynamoDB table (e.g., `Fortunes`).
-    
+5.  Execute the command from the text file to create the DynamoDB table (e.g., `fortunes`).
+<br>
+<p align="center">
+    <img src='./Images/3.png' width='500'/>
+    <img src='./Images/4.png' width='500'/>
+    <img src='./Images/5.png' width='500'/>
+</p>
+<br>     
 
 ## Step 3: Populate Database Data
 
