@@ -84,20 +84,41 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     aws dynamodb batch-write-item --request-items file://items.json
     
     ```
-    
+3.  Now check the items in table.   
+<br>
+<p align="center">
+    <img src='./Images/7.png' width='400'/>
+    <img src='./Images/8.png' width='400'/>
+</p>
+<br>
 
 ## Step 4: Create IAM Role for Lambda
 
 1.  Navigate to **IAM** → **Roles** → **Create role**.
+<br>
+<p align="center">
+    <img src='./Images/9.png' width='400'/>
+</p>
+<br>
     
 2.  Select **AWS service** and choose **Lambda** as the trusted entity.
-    
+<br>
+<p align="center">
+    <img src='./Images/10.png' width='400'/>
+</p>
+<br>
+
 3.  Click **Next: Permissions**.
     
 4.  Create a custom policy (or attach an existing one) that grants `dynamodb:Scan` and `dynamodb:GetItem` permissions on the table created in Step 2.
     
-5.  Name the role (e.g., `LambdaDynamoReadRole`) and create it.
-    
+5.  Name the role (e.g., `my-lambda-role`) and create it.
+<br>
+<p align="center">
+    <img src='./Images/11.png' width='400'/>
+    <img src='./Images/12.png' width='400'/>
+</p>
+<br>
 
 ## Step 5: Create Lambda Function
 
