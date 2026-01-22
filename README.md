@@ -276,6 +276,13 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 4.  Toggle **Active tracing** (under AWS X-Ray) to **On**.
     
 5.  Click **Save**.
+
+<br>
+<p align="center">
+    <img src='./Images/35.png' width='400'/>
+    <img src='./Images/36.png' width='400'/>
+</p>
+<br>  
     
 
 ## Step 12: Configure Lambda Layer
@@ -286,21 +293,37 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     
 3.  Upload the `layer.zip` file from the repository.
     
-4.  Choose **Python 3.9** as the compatible runtime and create the layer.
+4.  Choose **Python 3.14** as the compatible runtime and create the layer.
     
 5.  Go back to your Lambda function, scroll to the **Layers** section, click **Add a layer**, and attach the custom layer you just created.
-    
+
+<br>
+<p align="center">
+    <img src='./Images/37.png' width='400'/>
+    <img src='./Images/39.png' width='400'/>
+</p>
+<br>   
 
 ## Step 13: Update Code for Observability
 
 1.  Open the `lambda_function_xray.py` file from the repository.
     
-2.  Extract the import statements and the X-Ray patch code (e.g., `from aws_xray_sdk.core import xray_recorder...`).
+2.  Extract the import statements and the X-Ray patch code.
+<br>
+<p align="center">
+    <img src='./Images/40.png' width='400'/>
+</p>
+<br>  
     
 3.  Update your Lambda function code by pasting these lines into the appropriate sections (imports at the top, patch code before the handler).
     
 4.  **Deploy** the changes.
     
+<br>
+<p align="center">
+    <img src='./Images/41.png' width='400'/>
+</p>
+<br>  
 
 ## Step 14: Analyze X-Ray Traces
 
@@ -311,6 +334,13 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 3.  Open the **Service Map** to visualize the request flow from the Client → Lambda → DynamoDB.
     
 4.  Verify that the nodes are green (successful).
+
+<br>
+<p align="center">
+    <img src='./Images/42.png' width='400'/>
+    <img src='./Images/43.png' width='400'/>
+</p>
+<br>  
     
 
 ## Step 15: Simulate and Diagnose Failure
@@ -324,6 +354,18 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 4.  Return to the **X-Ray traces** service map.
     
 5.  Observe that the Lambda node or the link to DynamoDB is now showing an error (Orange/Red), confirming that the permission change successfully broke the application logic.
+
+<br>
+<p align="center">
+    <img src='./Images/45.png' width='400'/>
+    <img src='./Images/46.png' width='400'/>
+</p>
+<br>  
+<p align="center">
+    <img src='./Images/47.png' width='400'/>
+    <img src='./Images/48.png' width='400'/>
+</p>
+<br>  
     
 
 ----------
