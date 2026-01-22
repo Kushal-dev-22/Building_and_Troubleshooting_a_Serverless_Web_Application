@@ -68,7 +68,7 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 <br>
 <p align="center">
     <img src='./Images/3.png' width='400'/>
-    <img src='./Images/4.png' width='400'/>
+    <img src='./Images/4.png' width='400'/><br>
     <img src='./Images/5.png' width='400'/>
 </p>
 <br>     
