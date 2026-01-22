@@ -372,4 +372,4 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 
 ## Conclusion
 
-In this lab, we successfully built a serverless web application and navigated a real-world troubleshooting scenario. By initially deploying code that lacked required dependencies (`aws_xray_sdk`), we simulated a runtime failure and resolved it by creating and attaching an AWS Lambda Layer. Finally, we utilized AWS X-Ray to visualize the application's performance and architecture, deliberately breaking permissions to observe how failures are reported in a distributed system.
+This project demonstrates how to build, deploy, and troubleshoot a serverless web application on AWS. You learned how to connect a frontend hosted on S3 with a Lambda backend, observe system behavior using AWS X-Ray, and diagnose real issues like missing dependencies and IAM permission failures. Overall, it provides practical experience in operating and debugging serverless applications in real-world scenarios.
