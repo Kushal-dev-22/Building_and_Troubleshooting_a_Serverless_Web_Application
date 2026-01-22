@@ -110,7 +110,7 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 
 3.  Click **Next: Permissions**.
     
-4.  Create a custom policy (or attach an existing one) that grants `dynamodb:Scan` and `dynamodb:GetItem` permissions on the table created in Step 2.
+4.  Attatch policy named AmazonDynamoDBReadOnlyAccess with Basic Execution Role.
     
 5.  Name the role (e.g., `my-lambda-role`) and create it.
 <br>
@@ -125,24 +125,46 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 1.  Navigate to the **AWS Lambda** console.
     
 2.  Click **Create function**.
+<br>
+<p align="center">
+    <img src='./Images/13.png' width='400'/>
+</p>
+<br>
     
 3.  Select **Author from scratch**.
     
-4.  Name the function (e.g., `FortuneAppFunction`).
+4.  Name the function (e.g., `my-lambda-function`).
     
-5.  Select **Python 3.9** as the runtime.
+5.  Select **Python 3.14** as the runtime.
     
 6.  Under **Permissions**, select **Use an existing role** and choose the role created in Step 4.
+<br>
+<p align="center">
+    <img src='./Images/14.png' width='400'/>
+    <img src='./Images/15.png' width='400'/>
+</p>
+<br>
     
 7.  Copy the code from `lambda_function.py` in the repo and paste it into the **Code Source** editor.
     
 8.  Click **Deploy**.
-    
+
+<br>
+<p align="center">
+    <img src='./Images/16.png' width='400'/>
+    <img src='./Images/17.png' width='400'/>
+</p>
+<br>
 
 ## Step 6: Configure Function URL and Test
 
 1.  Click **Test** in the Lambda console to verify the function executes without errors.
-    
+<br>
+<p align="center">
+    <img src='./Images/18.png' width='400'/>
+</p>
+<br>
+
 2.  Navigate to the **Configuration** tab → **Function URL**.
     
 3.  Click **Create function URL**.
@@ -150,18 +172,26 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 4.  Select **NONE** for Auth type (to allow public access for this lab) and check **Configure CORS**.
     
 5.  Save the configuration and copy the generated **Function URL**.
-    
+
+<br>
+<p align="center">
+    <img src='./Images/19.png' width='400'/>
+    <img src='./Images/20.png' width='400'/>
+</p>
+<br>   
 
 ## Step 7: Connect Frontend to Backend
 
 1.  Open the `index.html` file on your local machine.
     
-2.  Locate the JavaScript variable (often named `apiEndpoint` or similar) inside the script tag.
+2.  Paste the **Function URL** you copied in Step 6 into the temporary URL inside the script tag.
     
-3.  Paste the **Function URL** you copied in Step 6 into the variable value.
-    
-4.  Save the file.
-    
+3.  Save the file.
+<br>
+<p align="center">
+    <img src='./Images/21.png' width='400'/>
+</p>
+<br>    
 
 ## Step 8: Create S3 Bucket and Upload Assets
 
@@ -172,23 +202,53 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 3.  Uncheck **Block all public access** and acknowledge the warning (required for public website hosting).
     
 4.  Create the bucket.
+
+<br>
+<p align="center">
+    <img src='./Images/23.png' width='400'/>
+    <img src='./Images/24.png' width='400'/>
+</p>
+<br>
     
 5.  Upload the modified `index.html`, `error.html`, and `cookie.jpg`.
-    
-6.  Select the uploaded files, go to **Actions** -> **Make public using ACL** (or modify the Bucket Policy to allow `s3:GetObject` for `Principal: *` if ACLs are disabled).
-    
+<br>
+<p align="center">
+    <img src='./Images/26.png' width='400'/>
+    <img src='./Images/28.png' width='400'/>
+</p>
+<br>    
+
+6.  While uploading under **Permissions** enable **Grant public read access**.
+<br>
+<p align="center">
+    <img src='./Images/29.png' width='400'/>
+</p>
+<br>
 
 ## Step 9: Enable Static Website Hosting
 
 1.  Go to the **Properties** tab of your S3 bucket.
     
 2.  Scroll down to **Static website hosting** and click **Edit**.
+
+<br>
+<p align="center">
+    <img src='./Images/30.png' width='400'/>
+    <img src='./Images/31.png' width='400'/>
+</p>
+<br>
     
 3.  Select **Enable**.
     
 4.  Enter `index.html` for the **Index document** and `error.html` for the **Error document**.
     
 5.  Save changes.
+
+<br>
+<p align="center">
+    <img src='./Images/32.png' width='400'/>
+</p>
+<br>
     
 
 ## Step 10: Access the Application
@@ -198,7 +258,12 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
 2.  Paste the URL into a new browser tab.
     
 3.  Verify the website loads and displays the content (including the `cookie.jpg` image) and retrieves data from the API.
-    
+<br>
+<p align="center">
+    <img src='./Images/33.png' width='400'/>
+    <img src='./Images/34.png' width='400'/>
+</p>
+<br>    
 
 ## Step 11: Enable AWS X-Ray Tracing
 
