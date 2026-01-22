@@ -35,7 +35,7 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     
 3.  Log in using your AWS credentials.
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; align-items: center;">
     <img src='./Images/1.png' width='500'/>
 </div>
     
