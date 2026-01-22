@@ -64,7 +64,6 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     
 2.  Execute the batch-write command to populate the table with initial data:
     
-    Bash
     
     ```
     aws dynamodb batch-write-item --request-items file://items.json
