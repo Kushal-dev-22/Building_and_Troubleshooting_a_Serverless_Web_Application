@@ -35,9 +35,9 @@ This project demonstrates the end-to-end deployment of a serverless 3-tier web a
     
 3.  Log in using your AWS credentials.
 
-<div style="display: flex; align-items: center;">
+<p align="center">
     <img src='./Images/1.png' width='500'/>
-</div>
+</p>
     
 
 ## Step 2: Initialize Database via CloudShell
